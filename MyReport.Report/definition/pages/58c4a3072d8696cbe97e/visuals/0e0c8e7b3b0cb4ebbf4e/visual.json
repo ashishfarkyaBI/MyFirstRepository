@@ -1,0 +1,80 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "0e0c8e7b3b0cb4ebbf4e",
+  "position": {
+    "x": 9.4488915545918015,
+    "y": 0,
+    "z": 0,
+    "width": 988.35405661030256,
+    "height": 591.50061131744678,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AMZN"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "queryRef": "AMZN.Date",
+              "nativeQueryRef": "Date",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "AMZN"
+                        }
+                      },
+                      "Property": "High"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(AMZN.High)",
+              "nativeQueryRef": "Sum of High"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "AMZN"
+                  }
+                },
+                "Property": "Date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
